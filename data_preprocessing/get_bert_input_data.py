@@ -19,7 +19,7 @@ input_data = pd.read_pickle(input_data_path)
 headers =['name','description_text']
 
 def convert_column_to_string():
-    for i in header:
+    for i in headers:
         input_data[i] = input_data[i].astype(str)
 def clean_string(sentences_list):
     sentences_list = [i.strip().replace('\n','').replace('\t','') for i in sentences_list]
