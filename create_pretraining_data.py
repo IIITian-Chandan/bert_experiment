@@ -22,7 +22,6 @@ import collections
 import random
 import tokenization
 import tensorflow as tf
-#from const import bert_data_path,bert_model_path
 
 flags = tf.flags
 
@@ -35,7 +34,8 @@ flags.DEFINE_string(
     "output_file", None,
     "Output TF example file (or comma-separated list of files).")
 
-
+flags.DEFINE_string("vocab_file", None,
+                    "The vocabulary file that the BERT model was trained on.")
 
 flags.DEFINE_bool(
     "do_lower_case", True,
@@ -59,7 +59,7 @@ flags.DEFINE_float(
     "short_seq_prob", 0.1,
     "Probability of creating sequences which are shorter than the "
     "maximum length.")
-vocan_file = os.path.join(bert_data_path, 'vocab.txt')
+
 
 class TrainingInstance(object):
   """A single training instance (sentence pair)."""
@@ -438,4 +438,6 @@ def main(_):
 if __name__ == "__main__":
   flags.mark_flag_as_required("input_file")
   flags.mark_flag_as_required("output_file")
+  flags.mark_flag_as_required("vocab_file")
   tf.app.run()
+
