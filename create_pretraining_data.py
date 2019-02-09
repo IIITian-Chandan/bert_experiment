@@ -22,7 +22,7 @@ import collections
 import random
 import tokenization
 import tensorflow as tf
-from const import bert_data_path,bert_model_path
+#from const import bert_data_path,bert_model_path
 
 flags = tf.flags
 
