@@ -16,7 +16,7 @@ import tensorflow as tf
 import utils
 
 CURDIR = os.path.dirname(os.path.abspath(__file__))
-CONFIGPATH = os.path.join(CURDIR, os.pardir, 'config.ini')
+CONFIGPATH = 'config.ini'
 config = configparser.ConfigParser()
 config.read(CONFIGPATH)
 bert_config_file = tempfile.NamedTemporaryFile(mode='w+t', encoding='utf-8', suffix='.json')
@@ -27,6 +27,10 @@ sys.path.append(os.path.join(CURDIR, os.pardir, 'bert'))
 import modeling
 import optimization
 
+try:
+    os.mkdir('pretraining_output')
+except:
+    pass
 
 flags = tf.flags
 
