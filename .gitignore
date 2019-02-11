@@ -7,9 +7,9 @@ __pycache__/
 
 # C extensions
 *.so
-data/
+data/input_model/
 keras/
-
+pretraining_output/
 # Distribution / packaging
 .Python
 build/

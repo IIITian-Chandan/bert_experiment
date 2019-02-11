@@ -1,0 +1,14 @@
+[PAD]
+[CLS]
+[UNK]
+[SEP]
+[MASK]
+color
+v-neck
+#neck
+sleeve
+length
+sequin
+floral
+print
+pattern
