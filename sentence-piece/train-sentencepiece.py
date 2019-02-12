@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#@opensource
 
 import configparser
 import glob
