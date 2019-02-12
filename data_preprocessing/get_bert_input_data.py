@@ -39,6 +39,6 @@ convert_column_to_string()
 for i in tqdm(range(len(input_data))):
     one_doc_data=[]
     for j in headers:
-        one_doc_data = one_doc_data + tokenize.sent_tokenize(input_data[j][i])
+        one_doc_data = one_doc_data + tokenize.sent_tokenize(str(input_data[j][i]))
     clean_doc_data = clean_string(one_doc_data)
     write_to_file(clean_doc_data)
