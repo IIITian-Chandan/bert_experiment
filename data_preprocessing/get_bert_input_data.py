@@ -7,7 +7,7 @@ except ImportError:
 from nltk import tokenize
 from tqdm import tqdm
 
-input_data_path = 'data/8000_cp_product.pkl'
+input_data_path = 'data/13l_cp_product.pkl'
 output_data_path = 'data/bert_pretrain_input.txt'
 try:
     f= open(output_data_path,"w+")
