@@ -12,8 +12,15 @@ import json
 import os
 import sys
 import tempfile
-import tensorflow as tf
 import utils
+# import comet_ml in the top of your file
+from comet_ml import Experiment
+    
+# Add the following code anywhere in your machine learning file
+experiment = Experiment(api_key="iEJDqOgS8QPlGv7hK3MYESLE2",
+                        project_name="bert-experiment", workspace="iiitian-chandan")
+
+import tensorflow as tf
 
 CURDIR = os.path.dirname(os.path.abspath(__file__))
 CONFIGPATH = 'config.ini'
