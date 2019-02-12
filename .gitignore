@@ -4,7 +4,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+data/13l_cp_product.pkl
 # C extensions
 *.so
 data/input_model/
