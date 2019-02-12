@@ -1,6 +1,12 @@
-#run create pretraining
+#data_preprocessing
+python data_preprocessing/get_bert_input_data.py
 
-python sentence-piece/create_pretraining.py --input_file=data/bert_pretrain_input.txt --output_file=data/bert_pretrain_input.tfrecord --vocab_file=sentence-piece_output/b_s_vocab.vocab --model_file=sentence-piece_output/b_s_vocab.model --do_lower_case=True --max_seq_length=128 --max_predictions_per_seq=20 --masked_lm_prob=0.15 --random_seed=12345 --dupe_factor=5
+#run sentence-piece
+python sentence-piece/train-sentencepiece.py
+
+
+#run create pretraining
+python sentence-piece/create_pretraining_data.py --input_file=data/bert_pretrain_input.txt --output_file=data/bert_pretrain_input.tfrecord --vocab_file=sentence-piece_output/b_s_vocab.vocab --model_file=sentence-piece_output/b_s_vocab.model --do_lower_case=True --max_seq_length=128 --max_predictions_per_seq=20 --masked_lm_prob=0.15 --random_seed=12345 --dupe_factor=5
 
 
 #run pretraining
