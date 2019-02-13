@@ -15,7 +15,7 @@ try:
 except:
     print('file already exists.')
 
-input_data = pd.read_pickle(input_data_path)
+input_data = pd.read_pickle(input_data_path).reset_index()
 headers =['name','description_text']
 
 def convert_column_to_string():
